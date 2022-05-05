@@ -1,11 +1,16 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/cupertino.dart'
+    show BoxDecoration, BuildContext, Column, Container, DecoratedBox, EdgeInsets,
+    Expanded, Key, ListView, MainAxisSize, SafeArea, StatelessWidget, Text, Widget;
+
 import 'package:flutter/material.dart'
-    show BuildContext, Card, Colors, Column, Divider, ElevatedButton, Key, LinearProgressIndicator, ListTile, MainAxisSize, SafeArea, StatelessWidget, Theme, Widget;
+    show BuildContext, Card, Colors, Column, Divider, ElevatedButton, Key,
+    LinearProgressIndicator, ListTile, MainAxisSize, SafeArea, StatelessWidget, Theme, Widget;
+
 import 'package:provider/provider.dart'
     show ChangeNotifierProvider, Provider;
 
-import 'constants.dart';
-import 'isolate_controller.dart';
+import '../constants.dart' show RunningRequest;
+import 'isolate_controller.dart' show DataTransferIsolateController;
 
 class DataTransferPageStarter extends StatelessWidget {
 
@@ -51,7 +56,7 @@ class DataTransferLayoutPage extends StatelessWidget {
               ElevatedButton(
                 child: const Text('Transfer Data to 2nd Isolate'),
                 style: ElevatedButton.styleFrom(
-                  primary: (controller.runningTest == RunningRequest.start)
+                  primary: (controller.runningTest == RunningRequest.isolate)
                       ? Colors.blueAccent
                       : Colors.green[300],
                   ),
@@ -60,7 +65,7 @@ class DataTransferLayoutPage extends StatelessWidget {
               ElevatedButton(
                 child: const Text('Transfer Data with TransferableTypedData'),
                 style: ElevatedButton.styleFrom(
-                    primary: (controller.runningTest == RunningRequest.finnish)
+                    primary: (controller.runningTest == RunningRequest.transferable)
                         ? Colors.blueAccent
                         : Colors.grey[300]
                 ),
@@ -69,7 +74,7 @@ class DataTransferLayoutPage extends StatelessWidget {
               ElevatedButton(
                 child: const Text('Generate on 2nd Isolate'),
                 style: ElevatedButton.styleFrom(
-                    primary: (controller.runningTest == RunningRequest.traffic)
+                    primary: (controller.runningTest == RunningRequest.generate)
                         ? Colors.blueAccent
                         : Colors.grey[300]
                 ),

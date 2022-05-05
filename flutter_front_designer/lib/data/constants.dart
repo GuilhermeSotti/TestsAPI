@@ -1,8 +1,8 @@
 enum RunningRequest {
   pause,
-  start,
-  finnish,
-  traffic,
+  isolate,
+  transferable,
+  generate,
 }
 
 class Constant {

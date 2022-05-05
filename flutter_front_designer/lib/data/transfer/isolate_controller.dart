@@ -1,10 +1,10 @@
-import 'dart:isolate';
-import 'dart:math';
-import 'dart:typed_data';
+import 'dart:isolate' show Isolate, ReceivePort, SendPort, TransferableTypedData;
+import 'dart:math' show Random;
+import 'dart:typed_data' show Int32List;
 
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/cupertino.dart' show ChangeNotifier;
 
-import 'constants.dart';
+import '../constants.dart' show Constant, RunningRequest;
 
 class DataTransferIsolateController extends ChangeNotifier {
 
@@ -70,7 +70,7 @@ class DataTransferIsolateController extends ChangeNotifier {
 
   void generateOnSecondaryIsolate() {
     if (isRunning) return;
-    runningTest = RunningRequest.traffic;
+    runningTest = RunningRequest.generate;
     currentProgress.clear();
 
     _timer = Stopwatch();
@@ -84,9 +84,9 @@ class DataTransferIsolateController extends ChangeNotifier {
     if (isRunning) return;
 
     if (transferableTypedData) {
-      runningTest = RunningRequest.finnish;
+      runningTest = RunningRequest.transferable;
     } else {
-      runningTest = RunningRequest.start;
+      runningTest = RunningRequest.isolate;
     }
 
     var random = Random();

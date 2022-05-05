@@ -1,12 +1,15 @@
-import 'dart:io';
+import 'dart:io' show Platform;
 
-import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
-import 'package:window_size/window_size.dart';
+import 'package:flutter/foundation.dart' show Key, kIsWeb;
+import 'package:flutter/material.dart'
+    show AppBar, BuildContext, DefaultTabController, Icon, Icons, Key, MaterialApp,
+    Scaffold, Size, StatelessWidget, Tab, TabBar, TabBarView, Text, Widget, WidgetsFlutterBinding, runApp;
 
-import 'dataTransfer/data_transfer_page.dart';
-import 'infinite_process_page.dart';
-import 'performance_page.dart';
+import 'package:window_size/window_size.dart' show setWindowMinSize, setWindowTitle;
+
+import 'data/transfer/data_transfer_page.dart' show DataTransferPageStarter;
+import 'process/infinite/infinite_process_page.dart' show InfiniteProcessPageStarter;
+import 'process/performance/performance_page.dart' show PerformancePage;
 
 void main() {
   setupWindow();
