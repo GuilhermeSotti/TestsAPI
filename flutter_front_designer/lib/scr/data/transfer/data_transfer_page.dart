@@ -49,7 +49,7 @@ class DataTransferLayoutPage extends StatelessWidget {
             backgroundColor: Colors.grey[200],
           ),
           const Expanded(
-            child: RunningList(),
+            child: RunningListDataTransfer(),
           ),
           Column(
             children:[
@@ -88,8 +88,8 @@ class DataTransferLayoutPage extends StatelessWidget {
   }
 }
 
-class RunningList extends StatelessWidget {
-  const RunningList({Key? key}) : super(key: key);
+class RunningListDataTransfer extends StatelessWidget {
+  const RunningListDataTransfer({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

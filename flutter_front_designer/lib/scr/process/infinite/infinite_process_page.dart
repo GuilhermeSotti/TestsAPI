@@ -41,7 +41,7 @@ class InfiniteProcessPage extends StatelessWidget{
             ),
           ),
           const Expanded(
-            child: RunningList(),
+            child: RunningListInfinite(),
           ),
           Column(
             mainAxisSize: MainAxisSize.min,
@@ -96,8 +96,8 @@ class InfiniteProcessPage extends StatelessWidget{
   }
 }
 
-class RunningList extends StatelessWidget{
-  const RunningList({Key? key}) : super(key: key);
+class RunningListInfinite extends StatelessWidget{
+  const RunningListInfinite({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
