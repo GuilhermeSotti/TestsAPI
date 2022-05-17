@@ -20,7 +20,7 @@ class TemplateRouteParser extends RouteInformationParser<ParsedRoute> {
 
     ///  [RouteGuard] used to redirect.
     this.guard,
-  })  : initialRoute = ParsedRoute(initialRoute, initialRoute, {}, {}),
+  }) : initialRoute = ParsedRoute(initialRoute, initialRoute, {}, {}),
         _pathTemplates = [
           ...allowedPaths,
         ],
