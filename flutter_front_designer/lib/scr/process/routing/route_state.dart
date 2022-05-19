@@ -17,7 +17,8 @@ class RouteState extends ChangeNotifier {
 
   RouteState(this._parser) : _routed = _parser.initialRoute;
 
-  ParsedRoute get() => _routed;
+  ParsedRoute get route => _routed;
+
   set route(ParsedRoute route) {
     // Don't notify listeners if the path hasn't changed.
     if (_routed == route) return;

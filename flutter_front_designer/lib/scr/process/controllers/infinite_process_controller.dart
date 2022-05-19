@@ -2,6 +2,7 @@ import 'dart:isolate' show Capability, Isolate, ReceivePort, SendPort;
 import 'dart:math' show Random;
 
 import 'package:flutter/cupertino.dart' show ChangeNotifier;
+
 import '../../data/constants.dart' show Constant;
 
 class InfiniteProcessIsolateController extends ChangeNotifier {

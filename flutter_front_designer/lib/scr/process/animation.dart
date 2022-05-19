@@ -1,17 +1,29 @@
 import 'package:flutter/material.dart'
-    show Alignment, AnimatedBuilder, Animation, AnimationController, BorderRadius,
-    BorderRadiusTween, BoxDecoration, BuildContext, Center, Colors, Container, FlutterLogo,
-    Key, LinearGradient, State, StatefulWidget, TickerProviderStateMixin, Widget;
+    show
+        Alignment,
+        AnimatedBuilder,
+        Animation,
+        AnimationController,
+        BorderRadius,
+        BorderRadiusTween,
+        BoxDecoration,
+        BuildContext,
+        Center,
+        Colors,
+        Container,
+        FlutterLogo,
+        LinearGradient,
+        State,
+        StatefulWidget,
+        TickerProviderStateMixin,
+        Widget;
 
 class SmoothAnimationWidgets extends StatefulWidget {
-  const SmoothAnimationWidgets({Key? key}) : super(key: key);
+  const SmoothAnimationWidgets({super.key});
 
   @override
-  SmoothAnimationWidgetsState createState() =>
-    // TODO: implement createState animation
-    SmoothAnimationWidgetsState();
-
-
+  // TODO: implement createState animation
+  SmoothAnimationWidgetsState createState() => SmoothAnimationWidgetsState();
 }
 
 class SmoothAnimationWidgetsState extends State<SmoothAnimationWidgets> with

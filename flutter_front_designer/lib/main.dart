@@ -3,13 +3,12 @@ import 'dart:io' show Platform;
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart'
     show MaterialApp, Rect, Size, WidgetsFlutterBinding, runApp;
-
 import 'package:url_strategy/url_strategy.dart' show setHashUrlStrategy;
 import 'package:window_size/window_size.dart'
     show getCurrentScreen, setWindowFrame, setWindowMaxSize, setWindowMinSize,
     setWindowTitle;
 
-import 'scr/app.dart' show NavBarMain;
+import 'scr/screens/navbar_main.dart' show NavBarMain;
 
 void main() {
   setHashUrlStrategy();

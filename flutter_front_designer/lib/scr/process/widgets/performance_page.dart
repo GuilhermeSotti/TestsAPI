@@ -1,13 +1,27 @@
-import 'package:flutter/foundation.dart' show Key, compute;
+import 'package:flutter/foundation.dart' show compute;
 import 'package:flutter/material.dart'
-    show Alignment, BuildContext, Center, Column, ConnectionState, Container,
-    EdgeInsets, ElevatedButton, FutureBuilder, Key, MainAxisSize, ScaffoldMessenger,
-    SnackBar, State, StatefulWidget, Text, Widget;
+    show
+        Alignment,
+        BuildContext,
+        Center,
+        Column,
+        ConnectionState,
+        Container,
+        EdgeInsets,
+        ElevatedButton,
+        FutureBuilder,
+        MainAxisSize,
+        ScaffoldMessenger,
+        SnackBar,
+        State,
+        StatefulWidget,
+        Text,
+        Widget;
 
 import '../animation.dart' show SmoothAnimationWidgets;
 
 class PerformancePage extends StatefulWidget {
-  const PerformancePage({Key? key}) : super(key: key);
+  const PerformancePage({super.key});
 
   @override
   State<PerformancePage> createState() => _PerformancePageState();
@@ -32,26 +46,28 @@ class _PerformancePageState extends State<PerformancePage> {
                 FutureBuilder(
                     future: computeFuture,
                     builder: (context, snapshot) {
-                        return ElevatedButton(
-                          child: const Text('Compute on Main'),
-                          style: ElevatedButton.styleFrom(elevation: 8.0),
-                          onPressed: snapshot.connectionState == ConnectionState.done
+                      return ElevatedButton(
+                      style: ElevatedButton.styleFrom(elevation: 8.0),
+                      onPressed:
+                          snapshot.connectionState == ConnectionState.done
                               ? () => handleComputeOnMain(context)
                               : null,
-                        );
-                    },
+                      child: const Text('Compute on Main'),
+                    );
+                  },
                 ),
                 FutureBuilder(
                     future: computeFuture,
                     builder: (context, snapshot) {
                       return ElevatedButton(
-                        child: const Text('Compute on Secondary'),
-                        style: ElevatedButton.styleFrom(elevation:8.0),
-                        onPressed: snapshot.connectionState == ConnectionState.done
-                          ? () => handleComputeOnSecondary(context)
-                            : null,
-                      );
-                    },
+                      style: ElevatedButton.styleFrom(elevation: 8.0),
+                      onPressed:
+                          snapshot.connectionState == ConnectionState.done
+                              ? () => handleComputeOnSecondary(context)
+                              : null,
+                      child: const Text('Compute on Secondary'),
+                    );
+                  },
                 ),
               ],
             ),

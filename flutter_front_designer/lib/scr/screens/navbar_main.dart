@@ -1,13 +1,25 @@
 import 'package:flutter/material.dart'
-    show AppBar, BuildContext, DefaultTabController, Icon, Icons,
-    Key, MaterialApp, Scaffold, State, StatefulWidget, Tab, TabBar,
-    TabBarView, Text, Widget;
+    show
+        AppBar,
+        BuildContext,
+        DefaultTabController,
+        Icon,
+        Icons,
+        MaterialApp,
+        Scaffold,
+        State,
+        StatefulWidget,
+        Tab,
+        TabBar,
+        TabBarView,
+        Text,
+        Widget;
 
-import 'widgets.dart'
+import '../widgets.dart'
     show DataTransferPageStarter, InfiniteProcessPageStarter, PerformancePage;
 
 class NavBarMain extends StatefulWidget {
-  const NavBarMain({Key? key}) : super(key: key);
+  const NavBarMain({super.key});
 
   @override
   State<StatefulWidget> createState() => _NavBarMain();

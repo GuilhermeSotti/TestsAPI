@@ -4,7 +4,7 @@ import 'dart:typed_data' show Int32List;
 
 import 'package:flutter/cupertino.dart' show ChangeNotifier;
 
-import '../constants.dart' show Constant, RunningRequest;
+import '../../data/constants.dart' show Constant, RunningRequest;
 
 class DataTransferIsolateController extends ChangeNotifier {
 

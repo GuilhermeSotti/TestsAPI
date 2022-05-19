@@ -1,14 +1,36 @@
 import 'package:flutter/material.dart'
-    show BoxDecoration, BuildContext, ButtonBar, Card, Colors, Column, DecoratedBox,
-    Divider, EdgeInsets, ElevatedButton, Expanded, Key, ListTile, ListView, MainAxisAlignment,
-    MainAxisSize, Padding, Radio, Row, SafeArea, StatelessWidget, Switch, Text, Theme, Widget;
-
+    show
+        BoxDecoration,
+        BuildContext,
+        ButtonBar,
+        Card,
+        Colors,
+        Column,
+        DecoratedBox,
+        Divider,
+        EdgeInsets,
+        ElevatedButton,
+        Expanded,
+        ListTile,
+        ListView,
+        MainAxisAlignment,
+        MainAxisSize,
+        Padding,
+        Radio,
+        Row,
+        SafeArea,
+        StatelessWidget,
+        Switch,
+        Text,
+        Theme,
+        Widget;
 import 'package:provider/provider.dart' show ChangeNotifierProvider, Provider;
 
-import 'isolate_controller.dart' show InfiniteProcessIsolateController;
+import '../controllers/infinite_process_controller.dart'
+    show InfiniteProcessIsolateController;
 
 class InfiniteProcessPageStarter extends StatelessWidget {
-  const InfiniteProcessPageStarter({Key? key}) : super(key: key);
+  const InfiniteProcessPageStarter({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +43,7 @@ class InfiniteProcessPageStarter extends StatelessWidget {
 }
 
 class InfiniteProcessPage extends StatelessWidget{
-  const InfiniteProcessPage({Key? key}) : super(key: key);
+  const InfiniteProcessPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -50,14 +72,14 @@ class InfiniteProcessPage extends StatelessWidget{
                 alignment: MainAxisAlignment.center,
                 children: [
                   ElevatedButton(
-                    child: const Text('Start'),
                     style: ElevatedButton.styleFrom(elevation: 8.0),
                     onPressed: () => controller.start,
+                    child: const Text('Start'),
                   ),
                   ElevatedButton(
-                    child: const Text('Terminate'),
                     style: ElevatedButton.styleFrom(elevation: 8.0),
                     onPressed: () => controller.terminate,
+                    child: const Text('Terminate'),
                   ),
                 ],
               ),
@@ -97,7 +119,7 @@ class InfiniteProcessPage extends StatelessWidget{
 }
 
 class RunningListInfinite extends StatelessWidget{
-  const RunningListInfinite({Key? key}) : super(key: key);
+  const RunningListInfinite({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -115,13 +137,13 @@ class RunningListInfinite extends StatelessWidget{
           return Column(
             children: [
               Card(
+                color: (controller.created && !controller.paused)
+                    ? Colors.lightGreenAccent
+                    : Colors.deepOrangeAccent,
                 child: ListTile(
                   leading: Text('${sums.length - index}.'),
                   title: Text('${sums[index]}'),
                 ),
-                color: (controller.created && !controller.paused)
-                    ? Colors.lightGreenAccent
-                    : Colors.deepOrangeAccent,
               ),
               const Divider(
                 color: Colors.blue,

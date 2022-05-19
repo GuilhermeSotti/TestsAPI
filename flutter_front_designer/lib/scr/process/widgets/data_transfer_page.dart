@@ -1,20 +1,41 @@
 import 'package:flutter/cupertino.dart'
-    show BoxDecoration, BuildContext, Column, Container, DecoratedBox, EdgeInsets,
-    Expanded, Key, ListView, MainAxisSize, SafeArea, StatelessWidget, Text, Widget;
-
+    show
+        BoxDecoration,
+        BuildContext,
+        Column,
+        Container,
+        DecoratedBox,
+        EdgeInsets,
+        Expanded,
+        ListView,
+        MainAxisSize,
+        SafeArea,
+        StatelessWidget,
+        Text,
+        Widget;
 import 'package:flutter/material.dart'
-    show BuildContext, Card, Colors, Column, Divider, ElevatedButton, Key,
-    LinearProgressIndicator, ListTile, MainAxisSize, SafeArea, StatelessWidget, Theme, Widget;
+    show
+        BuildContext,
+        Card,
+        Colors,
+        Column,
+        Divider,
+        ElevatedButton,
+        Theme,
+        LinearProgressIndicator,
+        ListTile,
+        MainAxisSize,
+        SafeArea,
+        StatelessWidget,
+        Widget;
+import 'package:provider/provider.dart' show ChangeNotifierProvider, Provider;
 
-import 'package:provider/provider.dart'
-    show ChangeNotifierProvider, Provider;
-
-import '../constants.dart' show RunningRequest;
-import 'isolate_controller.dart' show DataTransferIsolateController;
+import '../../data/constants.dart' show RunningRequest;
+import '../controllers/data_transfer_controller.dart'
+    show DataTransferIsolateController;
 
 class DataTransferPageStarter extends StatelessWidget {
-
-  const DataTransferPageStarter({Key? key}) : super(key: key);
+  const DataTransferPageStarter({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +48,7 @@ class DataTransferPageStarter extends StatelessWidget {
 }
 
 class DataTransferLayoutPage extends StatelessWidget {
-  const DataTransferLayoutPage({Key? key}) : super(key: key);
+  const DataTransferLayoutPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -38,11 +59,11 @@ class DataTransferLayoutPage extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Container(
+            padding: const EdgeInsets.all(8),
             child: Text(
               'Number Generator Progress',
               style: Theme.of(context).textTheme.headline6,
             ),
-            padding: const EdgeInsets.all(8),
           ),
           LinearProgressIndicator(
             value: controller.progressPercent,
@@ -54,31 +75,30 @@ class DataTransferLayoutPage extends StatelessWidget {
           Column(
             children:[
               ElevatedButton(
-                child: const Text('Transfer Data to 2nd Isolate'),
                 style: ElevatedButton.styleFrom(
                   primary: (controller.runningTest == RunningRequest.isolate)
                       ? Colors.blueAccent
                       : Colors.green[300],
-                  ),
-                onPressed: () => controller.generateRandomNumbers(false),
-              ),
-              ElevatedButton(
-                child: const Text('Transfer Data with TransferableTypedData'),
-                style: ElevatedButton.styleFrom(
-                    primary: (controller.runningTest == RunningRequest.transferable)
-                        ? Colors.blueAccent
-                        : Colors.grey[300]
                 ),
-                onPressed: () => controller.generateRandomNumbers(true),
+                onPressed: () => controller.generateRandomNumbers(false),
+                child: const Text('Transfer Data to 2nd Isolate'),
               ),
               ElevatedButton(
-                child: const Text('Generate on 2nd Isolate'),
+                style: ElevatedButton.styleFrom(
+                    primary:
+                        (controller.runningTest == RunningRequest.transferable)
+                            ? Colors.blueAccent
+                            : Colors.grey[300]),
+                onPressed: () => controller.generateRandomNumbers(true),
+                child: const Text('Transfer Data with TransferableTypedData'),
+              ),
+              ElevatedButton(
                 style: ElevatedButton.styleFrom(
                     primary: (controller.runningTest == RunningRequest.generate)
                         ? Colors.blueAccent
-                        : Colors.grey[300]
-                ),
+                        : Colors.grey[300]),
                 onPressed: controller.generateOnSecondaryIsolate,
+                child: const Text('Generate on 2nd Isolate'),
               ),
             ],
           ),
@@ -89,7 +109,7 @@ class DataTransferLayoutPage extends StatelessWidget {
 }
 
 class RunningListDataTransfer extends StatelessWidget {
-  const RunningListDataTransfer({Key? key}) : super(key: key);
+  const RunningListDataTransfer({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -106,10 +126,10 @@ class RunningListDataTransfer extends StatelessWidget {
           return Column(
             children: [
               Card(
+                color: Colors.lightGreenAccent,
                 child: ListTile(
                   title: Text(progress[index]),
                 ),
-                color: Colors.lightGreenAccent,
               ),
               const Divider(
                 color: Colors.blue,

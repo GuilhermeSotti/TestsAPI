@@ -5,9 +5,11 @@
 // gestures. You can also use WidgetTester to find child widgets in the widget
 // tree, read text, and verify that the values of widget properties are correct.
 
-import 'package:flutter/material.dart';
-import 'package:flutter_front_designer/scr/app.dart';
-import 'package:flutter_test/flutter_test.dart';
+import 'package:flutter/material.dart' show Icons, MaterialApp;
+import 'package:flutter_front_designer/scr/screens/navbar_main.dart'
+    show NavBarMain;
+import 'package:flutter_test/flutter_test.dart'
+    show WidgetTester, expect, find, findsNothing, findsOneWidget, testWidgets;
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
