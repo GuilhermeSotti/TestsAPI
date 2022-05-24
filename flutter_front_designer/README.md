@@ -17,4 +17,4 @@ samples, guidance on mobile development, and a full API reference.
 
 ### Version
 
--- VERSION: v1.04.0 --
+-- VERSION: v1.1.0 --

@@ -53,10 +53,7 @@ class SmoothAnimationWidgetsState extends State<SmoothAnimationWidgets> with
         animation: _borderAnimation,
         builder: (context, child) {
           return Container(
-              child: const FlutterLogo(
-                size: 200,
-              ),
-            alignment: Alignment.bottomCenter,
+              alignment: Alignment.bottomCenter,
             width: 350,
             height: 200,
             decoration: BoxDecoration(
@@ -69,6 +66,9 @@ class SmoothAnimationWidgetsState extends State<SmoothAnimationWidgets> with
               ),
               borderRadius: _borderAnimation.value,
             ),
+              child: const FlutterLogo(
+                size: 200,
+              ),
           );
         },
       ),

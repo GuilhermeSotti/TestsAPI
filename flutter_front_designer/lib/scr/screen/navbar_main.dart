@@ -1,25 +1,19 @@
 import 'package:flutter/material.dart'
-    show
-        AppBar,
-        BuildContext,
-        DefaultTabController,
-        Icon,
-        Icons,
-        MaterialApp,
-        Scaffold,
-        State,
-        StatefulWidget,
-        Tab,
-        TabBar,
-        TabBarView,
-        Text,
-        Widget;
+    show AppBar, BuildContext, DefaultTabController, GlobalKey, Icon, Icons, MaterialApp,
+    NavigatorState, Scaffold, State, StatefulWidget, Tab, TabBar, TabBarView, Text, Widget;
+
+import 'settings.dart' show SettingsScreen;
 
 import '../widgets.dart'
     show DataTransferPageStarter, InfiniteProcessPageStarter, PerformancePage;
 
 class NavBarMain extends StatefulWidget {
-  const NavBarMain({super.key});
+  final GlobalKey<NavigatorState> naviKey;
+
+  const NavBarMain({
+    required this.naviKey,
+    super.key,
+  });
 
   @override
   State<StatefulWidget> createState() => _NavBarMain();
@@ -27,12 +21,13 @@ class NavBarMain extends StatefulWidget {
 
 class _NavBarMain extends State<NavBarMain> {
 
-  // This widget is the root of your application.
+  // This widget is the root of the application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: DefaultTabController(
-        length: 3,
+        key: widget.naviKey,
+        length: 4,
         child: Scaffold(
           appBar: AppBar(
             bottom: const TabBar(
@@ -49,6 +44,10 @@ class _NavBarMain extends State<NavBarMain> {
                   icon: Icon(Icons.storage),
                   text: 'Data Transfer',
                 ),
+                Tab(
+                  icon: Icon(Icons.settings),
+                  text: 'Settings',
+                )
               ],
             ),
             title: const Text('Isolate Example'),
@@ -58,6 +57,7 @@ class _NavBarMain extends State<NavBarMain> {
               PerformancePage(),
               InfiniteProcessPageStarter(),
               DataTransferPageStarter(),
+              SettingsScreen(),
             ],
           ),
         ),

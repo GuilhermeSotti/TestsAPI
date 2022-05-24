@@ -15,14 +15,15 @@ import 'package:flutter/widgets.dart'
 import 'parsed_routed.dart' show ParsedRoute;
 import 'route_state.dart' show RouteState;
 
-class SimpleRouteDelete extends RouterDelegate<ParsedRoute>
-    with ChangeNotifier, PopNavigatorRouterDelegateMixin<ParsedRoute> {
+class SimpleRouteDelegate extends RouterDelegate<ParsedRoute> with
+                                ChangeNotifier,
+                                PopNavigatorRouterDelegateMixin<ParsedRoute> {
   final RouteState routeState;
   final WidgetBuilder builder;
 
   final GlobalKey<NavigatorState> naviKey;
 
-  SimpleRouteDelete({
+  SimpleRouteDelegate({
     required this.routeState,
     required this.builder,
     required this.naviKey,

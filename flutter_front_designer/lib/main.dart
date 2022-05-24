@@ -8,16 +8,12 @@ import 'package:window_size/window_size.dart'
     show getCurrentScreen, setWindowFrame, setWindowMaxSize, setWindowMinSize,
     setWindowTitle;
 
-import 'scr/screens/navbar_main.dart' show NavBarMain;
+import 'scr/app.dart' show Main;
 
 void main() {
   setHashUrlStrategy();
   setupWindow();
-  runApp(
-    const MaterialApp(
-      home: NavBarMain(),
-    ),
-  );
+  runApp(const Main());
 }
 
 const double windowWidth = 1024;
