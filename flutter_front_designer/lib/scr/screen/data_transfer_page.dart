@@ -30,8 +30,8 @@ import 'package:flutter/material.dart'
         Widget;
 import 'package:provider/provider.dart' show ChangeNotifierProvider, Provider;
 
-import '../../data/constants.dart' show RunningRequest;
-import '../controllers/data_transfer_controller.dart'
+import '../data/constants.dart' show RunningRequest;
+import '../process/controllers/data_transfer_controller.dart'
     show DataTransferIsolateController;
 
 class DataTransferPageStarter extends StatelessWidget {

@@ -18,7 +18,7 @@ import 'package:flutter/material.dart'
         Text,
         Widget;
 
-import '../services/animation.dart' show SmoothAnimationWidgets;
+import '../process/widgets/services/animation.dart' show SmoothAnimationWidgets;
 
 class PerformancePage extends StatefulWidget {
   const PerformancePage({super.key});

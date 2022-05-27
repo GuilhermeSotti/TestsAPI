@@ -1,7 +1,20 @@
 import 'package:flutter/material.dart'
-    show AlertDialog, BuildContext, Column, EdgeInsets, ElevatedButton, Navigator, Padding, StatelessWidget, Text, TextButton, Theme, Widget, showDialog;
+    show
+        AlertDialog,
+        BuildContext,
+        Column,
+        EdgeInsets,
+        ElevatedButton,
+        Navigator,
+        Padding,
+        StatelessWidget,
+        Text,
+        TextButton,
+        Theme,
+        Widget,
+        showDialog;
 
-import '../services/auth.dart';
+import 'services/auth.dart';
 
 class SettingsContent extends StatelessWidget {
   const SettingsContent({super.key});
@@ -20,7 +33,7 @@ class SettingsContent extends StatelessWidget {
             onPressed: () {
               AuthenticationManagerScope.of(context).signOut();
             },
-            child: const Text('Sing out'),
+            child: const Text('Sign out'),
           ),
        ].map((widget) => Padding(padding: const EdgeInsets.all(8), child: widget)),
         TextButton(

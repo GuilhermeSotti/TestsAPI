@@ -26,7 +26,7 @@ import 'package:flutter/material.dart'
         Widget;
 import 'package:provider/provider.dart' show ChangeNotifierProvider, Provider;
 
-import '../controllers/infinite_process_controller.dart'
+import '../process/controllers/infinite_process_controller.dart'
     show InfiniteProcessIsolateController;
 
 class InfiniteProcessPageStarter extends StatelessWidget {

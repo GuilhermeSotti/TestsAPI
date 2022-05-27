@@ -1,10 +1,29 @@
 import 'package:flutter/material.dart'
-    show BuildContext, CupertinoPageTransitionsBuilder, FadeUpwardsPageTransitionsBuilder, GlobalKey, MaterialApp, NavigatorState, PageTransitionsTheme, State, StatefulWidget, TargetPlatform, ThemeData, Widget;
-import 'package:flutter_front_designer/scr/screen/navbar_main.dart';
+    show
+        BuildContext,
+        CupertinoPageTransitionsBuilder,
+        FadeUpwardsPageTransitionsBuilder,
+        GlobalKey,
+        MaterialApp,
+        NavigatorState,
+        PageTransitionsTheme,
+        State,
+        StatefulWidget,
+        TargetPlatform,
+        ThemeData,
+        Widget;
 
-import 'process/services/auth.dart' show AuthenticationManager, AuthenticationManagerScope;
+import 'process/widgets/services/auth.dart'
+    show AuthenticationManager, AuthenticationManagerScope;
+import 'process/widgets/services/route_authentication.dart'
+    show RouteAuthentication;
 import 'routes.dart'
-    show ParsedRoute, RouteState, RouteStateScope, SimpleRouteDelegate, TemplateRouteParser;
+    show
+        ParsedRoute,
+        RouteState,
+        RouteStateScope,
+        SimpleRouteDelegate,
+        TemplateRouteParser;
 
 class Main extends StatefulWidget {
   const Main({super.key});
@@ -65,10 +84,9 @@ class _Main extends State<Main> {
     _routeState = RouteState(_routeParser);
 
     _routeDelegate = SimpleRouteDelegate(
-        routeState: _routeState,
-        naviKey: _naviKey,
-        builder: (context) =>
-            NavBarMain(naviKey: _naviKey),
+      routeState: _routeState,
+      naviKey: _naviKey,
+      builder: (context) => RouteAuthentication(naviKey: _naviKey),
     );
 
     // Listen for when the user logs out and and displays the signed screen
@@ -79,7 +97,7 @@ class _Main extends State<Main> {
 
   Future<ParsedRoute> _guard(ParsedRoute from) async {
     final signedIn = _auth.signedIn;
-    final signedInRoute = ParsedRoute('/sing_in_page', '/sign_in_page', {}, {});
+    final signedInRoute = ParsedRoute('/sign_in_page', '/sign_in_page', {}, {});
 
     // Go to sign in page if the is not logged
     if (!signedIn && from != signedInRoute) {

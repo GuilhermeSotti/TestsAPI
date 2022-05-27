@@ -6,7 +6,7 @@ class AuthenticationManager extends ChangeNotifier {
   bool _signedIn = false;
   bool get signedIn => _signedIn;
 
-  Future<bool> singIn() async {
+  Future<bool> signIn(String username, String password) async {
     delay();
 
     // Sign in allowed in any password
